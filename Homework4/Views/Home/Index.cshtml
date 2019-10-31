@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+    <div class="jumbotron">
+        <h1>CS 460 Homework 4</h1>
+        <p class="lead">Objectives for this project:</p>
+        <ol type="1">
+            <li>Begin learning ASP.NET MVC 5</li>
+            <li>Be able to write a simple (but multi-page) MVC web application that does not use a database</li>
+            <li>Be able to use the ViewBag or ViewData</li>
+            <li>Demonstrate knowledge of the Request object and its relationship to query strings and form data</li>
+            <li>Learn simple language constructs for the Razor view engine</li>
+            <li>Understand the relationships between Model, View and Controller and be able to explain how they work together to service requests</li>
+            <li>Understand the operation of controller action methods, including simple routing and parameter binding</li>
+            <li>Understand GET and POST, how they're different, and how to use them in an MVC app</li>
+        </ol>
+        <p><a href="https://wou-cs46x-resources.netlify.com/cs460/hw/hw4" class="btn btn-primary btn-lg">The Assignment &raquo;</a></p>
+    </div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>RGB Color</h2>
+        <p>
+            This is a tool designed to visualize a given RGB color code. The server reads the data from query strings.
+        </p>
+        @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Give it a try &raquo;</a></p>*@
+        <p>@Html.ActionLink("See some colors!", "RGBColor", "Home")></p>
+    </div>
+    <div class="col-md-6">
+        <h2>Color Interpolation</h2>
+        <p>This tool takes two colors and finds a path of equal steps to get from one to another based on a given number.</p>
+        <p>@Html.ActionLink("Click here", "Create", "ColorInterpolator")></p>
+    </div>
+</div>

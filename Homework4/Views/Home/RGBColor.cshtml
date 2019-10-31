@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "RGB Color Display";
+}
+
+<h2>Enter an RGB Color to see what it looks like!</h2>
+
+<div class="row">
+    <div class="col-md-8">
+        @using (Html.BeginForm("RGBColor", "Home", FormMethod.Get)) {
+            @Html.Label("Red", "R")
+            @Html.TextBox("Red", null, new { @class = "form-control", type = "number", min = "0", max = "255" })
+            @Html.Label("Green", "G")
+            @Html.TextBox("Green", null, new { @class = "form-control", type = "number", min = "0", max = "255" })
+            @Html.Label("Blue", "B")
+            @Html.TextBox("Blue", null, new { @class = "form-control", type = "number", min = "0", max = "255" })
+            <button type="submit" class="btn btn-primary">Display</button>
+        }
+    </div>
+    <div class="col-md-4">
+        <div class="square" id="rgbCanvas">
+
+        </div>
+        <p>#@ViewBag.Red@ViewBag.Green@ViewBag.Blue</p>
+    </div>
+</div>
+
+<style>
+    #rgbCanvas {
+        height: 200px;
+        width: 200px;
+        background-color: rgb(@ViewBag.Red, @ViewBag.Green, @ViewBag.Blue);
+    }
+</style>
